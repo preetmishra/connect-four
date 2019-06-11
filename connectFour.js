@@ -98,7 +98,7 @@ $('.board button').on('click', function(){
     if (horizontalWinCheck() || verticalWinCheck() || diagonalWinCheck()){
         $('h1').text(currentName + ', YOU NAILED IT!');
         $('h4').html(
-            '<a href="./index.html" class="d-block" style="background-color: #232323; text-align: center; text-decoration: none; color: white; padding: 10px 0px;">RESTART?</a>'
+            '<a href="./index.html" class="btn btn-default btn-block" style="background-color: #232323; text-align: center; text-decoration: none; color: white; padding: 10px 0px;">RESTART?</a>'
             );
         head3.fadeOut('fast');
         $('h1').css('font-size', '70px');
