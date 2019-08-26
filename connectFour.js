@@ -5,12 +5,6 @@ var playerTwoColor = 'rgb(237, 45, 73)';
 var head3 = $('h3');
 var gameOn = true;
 var table = $('table tr');
- 
-function reportWin(rowNum, colNum){
-    console.log("You won starting at this row, col");
-    console.log(rowNum);
-    console.log(colNum);  
-}
 
 function changeColor(rowIndex, colIndex, color){
     return table.eq(rowIndex).find('td').eq(colIndex).find('Button').css('background-color', color);
@@ -38,8 +32,6 @@ function horizontalWinCheck(){
     for (var row = 0; row < 6; row++){
         for (var col = 0; col < 4; col++){
             if (colorMatchCheck(returnColor(row, col), returnColor(row, col + 1), returnColor(row, col + 2), returnColor(row, col + 3))){
-                console.log('Hori Win');
-                reportWin(row, col);
                 return true;
             }
             else{
@@ -53,8 +45,6 @@ function verticalWinCheck(){
     for (var col = 0; col < 7; col++){
         for (var row = 0; row < 3; row++){
             if (colorMatchCheck(returnColor(row, col), returnColor(row + 1, col), returnColor(row + 2, col), returnColor(row + 3, col))){
-                console.log('Vert Win');
-                reportWin(row, col);
                 return true;
             }
             else{
@@ -68,13 +58,9 @@ function diagonalWinCheck(){
     for (var col = 0; col < 5; col++){
         for (var row = 0; row < 7; row++){
             if (colorMatchCheck(returnColor(row, col), returnColor(row + 1, col  + 1), returnColor(row + 2, col + 2), returnColor(row + 3, col + 3))) {
-                console.log('Vert Win');
-                reportWin(row, col);
                 return true;
             }
             else if (colorMatchCheck(returnColor(row, col), returnColor(row - 1, col + 1), returnColor(row - 2, col + 2), returnColor(row - 3, col + 3))) {
-                console.log('Vert Win');
-                reportWin(row, col);
                 return true;
             }
             else {
